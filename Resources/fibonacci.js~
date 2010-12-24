@@ -1,0 +1,89 @@
+var win = Titanium.UI.currentWindow;
+
+//
+// BASIC SLIDER
+//
+var basicSliderLabel = Titanium.UI.createLabel({
+	//text:'Basic Slider - value = 0' ,
+	text:'Fibonacci',
+	color:'#777',
+	font:{
+		fontFamily:'Helvetica Neue',
+		fontSize:15
+	},
+	textAlign:'center',
+	top:10,
+	width:300,
+	height:'auto'
+});
+
+win.add(basicSliderLabel);
+var l = Titanium.UI.createLabel({
+	top:150,
+	left:10,
+	width:300,
+	height:'auto',
+	color:'#777',
+	font:{fontSize:13},
+	text:''
+});
+win.add(l);
+
+var tf1 = Titanium.UI.createTextField({
+	color:'#336699',
+	height:45,
+	top:50,
+	left:20,
+	width:250,
+	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
+});
+win.add(tf1);
+
+
+
+
+var blurLabel = Titanium.UI.createButton({
+	top:100,
+	height:40,
+	width:100,
+	title:'Submit'
+});
+win.add(blurLabel);
+blurLabel.addEventListener('click', function()
+{
+	fibonacci(tf1.value);
+	l.text = 'Fibonacci = '  + r;	
+});
+
+
+function fibonacci(n) {
+	
+    var i,a,b,c;
+    var result = [];
+    a=0;
+    b=1;
+   result[0]  = a
+	result[1]  =  b 
+   for(i=2;i<=n;i++)
+      {
+	   c=a+b;
+	     a=b;
+             b=c;
+             result[i]  = c
+       }
+   
+       alert(result[3]);
+       r=result[n];
+         return r;
+  
+}
+
+
+
+
+
+
+
+
+
+
