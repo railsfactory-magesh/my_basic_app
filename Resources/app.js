@@ -17,7 +17,7 @@ var tab1 = Titanium.UI.createTab({
 var data = [
 	{title:'Twitter', hasChild:true, test:'twitter.js'},
 	{title:'Facebook', hasChild:true},
-	{title:'GeexHQ', hasChild:true},
+	{title:'GeexHQ', hasChild:true, test:'geexhq.js'},
 	{title:'Fibonacci', hasChild:true, test:'fibonacci.js'},
 	{title:'Calculator', hasChild:true, test:'calc.js'}
 
