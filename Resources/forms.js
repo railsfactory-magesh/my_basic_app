@@ -1,5 +1,3 @@
-Ti.include("jquery-1.4.4.min.js");
-
 var win = Titanium.UI.currentWindow;
 
 var nameLabel = Titanium.UI.createLabel({
@@ -62,22 +60,17 @@ function send()
     Ti.API.info(name);
     alert(name);
     
-    // var request = Ti.Network.createHTTPClient();
+    var request = Ti.Network.createHTTPClient();
     
-    // request.open("POST","http://192.168.1.175:3000/posts");
-    // var params = {"post": {"name": name,"title": "this is the title","content": "this is the content"}};
+    request.open("POST","http://192.168.1.175:3000/posts");
+    var params = {
+	name:name,
+	title:"this is the title",
+	content:"this is the content"
+    }
     // var data = JSON.stringify(params);
+    Ti.API.info(params);
     // Ti.API.info(data);
-    // request.send(data);
-    
-    $.ajax({
-	    type: "POST",
-		url: 'http://localhost:3000/posts',
-		data: { post : JSON.strigify({"name": name,"title": "this is the title","content": "this is the content"} ) },
-		dataType: 'json',
-		success: function(msg) {
-		alert( "Data Saved: " + msg );
-	    }
-	});
+    request.send(params);
     
 };
